@@ -1,3 +1,11 @@
 #main {
     margin: auto 0;
 }
+
+#movieInput {
+    display: none;
+}
+
+#movieSearchBtn {
+    display: none;
+}
