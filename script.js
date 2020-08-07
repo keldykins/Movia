@@ -1,8 +1,12 @@
 $(document).foundation();
-$( document ).ready(function() {
+
 const startButton = $("#startButton");
 const main = $("#main");
 const header = $("header");
+let score = 0;
+let triviaQuestionIndex = 0;
+let apiResponse = "";
+
 
 
 startButton.on("click", function () {
@@ -12,12 +16,71 @@ startButton.on("click", function () {
 });
 
 function startQuiz() {
-    
-var textDiv = $("<p>").text("Hello World");
+    event.preventDefault();
+    $("#main").fadeOut("slow");
+    $("#main").empty();
+    triviaCall();
 
-$("#questions").append(textDiv);
 
 }
+
+function triviaCall() {
+    $.ajax({
+    dataType: "json",
+    url:"https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple",
+    method: "GET",
+    }).then(function (response) {
+    $("#main").fadeIn("slow");
+    apiResponse = response.results;
+    renderQuestions();
+      // if then statements to run through correct/ wrong answers senarios
+    });
+}
+
+function renderQuestions() {
+    $("#questions").empty();
+    const triviaRes = apiResponse;
+    const trivia = triviaRes[triviaQuestionIndex];
+    let questionnaireCards = $("#questions");
+    let triviaQuestionsRes = $("<p>").addClass("card-text").html(trivia.question);
+    let correctAnswerRes = trivia.correct_answer;
+    let incorrectAnswersRes = trivia.incorrect_answers;
+    incorrectAnswersRes.push(correctAnswerRes);
+    let totalAnswers = incorrectAnswersRes;
+    // set up p tags for questions
+
+    let displayedQuestions = $("<p>").html(triviaQuestionsRes);
+
+    for (let j = 0; j < totalAnswers.length; j++) {
+      // set up buttons for choices
+    let buttonEl = $("<button>");
+    buttonEl.addClass("button small large-only-expanded answer-button").html(incorrectAnswersRes[j]);
+    buttonEl.val(incorrectAnswersRes[j]);
+      // append one question and its choice within the same box
+    let questionnaireCardBody = $("<div>").addClass("card-section");
+    questionnaireCardBody.append(displayedQuestions[j]);
+    questionnaireCardBody.append(buttonEl);
+    let questionnaireCard = $("<div>").addClass("card");
+    questionnaireCard.append(questionnaireCardBody);
+    questionnaireCards.append(questionnaireCard);
+    }
+}
+
+$(document).on("click", ".answer-button", function () {
+    const correct = $(this).val();
+    if (correct === apiResponse[triviaQuestionIndex].correct_answer) {
+    score++;
+    }
+    triviaQuestionIndex++;
+    if (triviaQuestionIndex <= 10) {
+    renderQuestions();
+    } //else {
+    // empty the question div
+    //display score
+    //display our movieInput and SearchBtn style to block
+    // }
+});
+
 
 // Movie Search (AJAX CALL)
 var movies = [];
@@ -75,8 +138,6 @@ $("#movieSearchBtn").on("click", function(event){
         $("#movie-display").prepend(movieDiv);
     
     })
-
-});
 
 });
 
