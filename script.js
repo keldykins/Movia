@@ -26,14 +26,14 @@ function startQuiz() {
 
 function triviaCall() {
     $.ajax({
-        dataType: "json",
-        url: "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple",
-        method: "GET",
-    }).then(function(response) {
-        $("#main").fadeIn("slow");
-        apiResponse = response.results;
-        renderQuestions();
-        // if then statements to run through correct/ wrong answers senarios
+    dataType: "json",
+    url:"https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple",
+    method: "GET",
+    }).then(function (response) {
+    $("#main").fadeIn("slow");
+    apiResponse = response.results;
+    renderQuestions();
+      // if then statements to run through correct/ wrong answers senarios
     });
 }
 
@@ -114,27 +114,11 @@ function scoreQuiz() {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Movie Search (AJAX CALL)
 var movies = [];
 var movieDisplay = $("movie-display");
+$("#movieSearchBtn").on("click", function(event){
 
-
-$("#movieSearchBtn").on("click", function(event) {
     event.preventDefault();
     var movieTitle = $("#movieInput").val();
 
