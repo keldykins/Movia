@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +8,47 @@
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="callout large primary">
-    <div class="row column text-center">
-        <h1>Movia</h1>
-        <h2 class="subheader">Your favorite Movie Trivia</h2>
+    <div class="callout large primary">
+        <div class="row column text-center">
+            <h1>Movia</h1>
+            <h2 class="subheader">Your favorite Movie Trivia</h2>
+        </div>
     </div>
+    <div id="main">
+        <div style="border: solid black 1px;">
+            <h4 style="text-align: center;">Welcome to Movia!!</h4>
+            <p style="text-align: center;">
+                Are you a film nerd? Yes, then you are in the right place. Let’s test your knowledge. Take a few minutes and take the quiz. You will be presented with 10 multiple-choice questions of random films. Stay tuned until the end for some SUPRISES! <br><br>
+                <button type="button" class="success button" id="startButton" style="right: 20px;">Start Quiz</button></p>
+        </div>
     </div>
-<div id="main">
-    <div style="border: solid black 1px;">
-        <h4 style="text-align: center;">Welcome to Movia!!</h4>
-        <p style="text-align: center;">
-            Are you a film nerd? Yes, then you are in the right place.
-            Let’s test your knowledge. Take a few minutes and take the quiz. You will be presented with 10 multiple-choice questions of random films. Stay tuned until the end for some SUPRISES! <br><br> 
-        <button type="button" class="success button" id="startButton" style="right: 20px;">Start Quiz</button></p>
+
+    <div id="questions"></div>
+    <div id="choices"></div>
+    <div id="scores"></div>
+    <div id="movie-search">
+
+        <input id="movieInput" type="text" class="inputBox description col col col"></input>
+        <button id="movieSearchBtn" class="button success" type="button" id="button-addon2">Search</button>
+
+
+
+
+
+        <div id="movie-display"></div>
     </div>
-</div>
-<div id="questions"></div>
-<div id="choices"></div>
-<div id="scores"></div>
-<div id="movie-search">
-
-<input id="movieInput" type="text" class="inputBox description col col col"></input>
-<button id="movieSearchBtn" class="button success" type="button" id="button-addon2">Search</button>
-        
 
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
 
-<div id="movie-display"></div>
-</div>
+    <script src="script.js"></script>
 
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-<script src="script.js"></script>
 </body>
+
 </html>
