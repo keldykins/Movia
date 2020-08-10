@@ -56,9 +56,26 @@
   border-radius: 6px;
   border-color: black;
 }
-​ #movieInput {
+
+#movieSearch {
   display: none;
 }
-​ #movieSearchBtn {
+
+#questions {
   display: none;
+}
+
+#scores {
+  display: none;
+  padding: 5px;
+  margin: 10px auto;
+  width: 600px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 0 10px 3px;
+  font-size: 30px;
+} 
+
+#movie-display {
+  text-align: center;
 }
