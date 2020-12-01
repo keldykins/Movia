@@ -7,11 +7,27 @@ Movia is a movie trivia app that uses the omdbAPI to generate 10 random film rel
 ## Usage
 https://keldykins.github.io/Movia/
 
-## Contact
+## Authors
 
-Github: [keldykins](http://github.com/keldykins)
-<br />
-Email: [kelcundy@gmail.com](kelcundy@gmail.com)
+Catherina Lui
+
+![](http://i.imgur.com/9I6NRUm.png)
+[mrclaudiogallo](http://github.com/catherinelui2)
+
+Claudio Gallo
+
+![](http://i.imgur.com/9I6NRUm.png)
+[mrclaudiogallo](http://github.com/mrclaudiogallo)
+
+Gabrielle Maxey
+
+![](http://i.imgur.com/9I6NRUm.png)
+[GabrielleM45](http://github.com/GabrielleM45)
+
+Keldan Cundy
+
+![](http://i.imgur.com/9I6NRUm.png)
+[keldykins](http://github.com/keldykins)
 
 ## License
 
