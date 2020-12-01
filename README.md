@@ -12,7 +12,7 @@ https://keldykins.github.io/Movia/
 Catherina Lui
 
 ![](http://i.imgur.com/9I6NRUm.png)
-[mrclaudiogallo](http://github.com/catherinelui2)
+[catherinelui2](http://github.com/catherinelui2)
 
 Claudio Gallo
 
